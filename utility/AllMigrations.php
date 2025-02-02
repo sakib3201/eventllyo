@@ -11,7 +11,7 @@ class AllMigrations {
     }
 
     public function runMigrations() {
-        $files = glob('migrations/*.php'); // Get all migration files
+        $files = glob('../migrations/*.php'); // Get all migration files
 
         foreach ($files as $file) {
             require_once $file; // Include the migration file
@@ -26,7 +26,7 @@ class AllMigrations {
     }
 
     public function downMigrations() {
-        $files = glob('migrations/*.php'); // Get all migration files
+        $files = glob('../migrations/*.php'); // Get all migration files
 
         foreach ($files as $file) {
             require_once $file; // Include the migration file
