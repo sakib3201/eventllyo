@@ -1,7 +1,5 @@
 <?php
-
-require_once '../core/Session.php';
-require_once '../core/Router.php';
+require_once '../vendor/autoload.php';
 
 use Core\Session;
 use Core\Router;
@@ -13,5 +11,6 @@ $router = new Router();
 require_once '../routes/web.php';
 
 // Handle the request
-$router->dispatch($_SERVER['REQUEST_URI']);
+$uri = preg_replace('/^\/eventllyo\/public/', '', $_SERVER['REQUEST_URI']);
+$router->dispatch($uri);
 

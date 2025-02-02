@@ -1,4 +1,5 @@
 <?php
+namespace App\Controllers;
 
 use App\Models\Event;
 use Core\Controller;

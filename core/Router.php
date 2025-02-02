@@ -19,9 +19,8 @@ class Router {
         if (isset($this->routes[$method][$uri])) {
             list($controllerName, $methodName) = explode('@', $this->routes[$method][$uri]);
 
-            require_once "../app/Controllers/{$controllerName}.php";
-
-            $controller = new $controllerName();
+            $controller = "App\\Controllers\\{$controllerName}";
+            $controller = new $controller();
             $controller->$methodName();
         } else {
             http_response_code(404);
