@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Core\Database;
+use Core\Model;
 use PDO;
 
-class Event {
-    private $db;
+class Event extends Model {
+    protected $db;
+
+    protected $table = 'events';
 
     public function __construct() {
         $this->db = Database::connect();

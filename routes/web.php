@@ -8,3 +8,7 @@ $router->post('/auth/login', 'AuthController@login');
 $router->get('/auth/register', 'AuthController@register');
 $router->post('/auth/register', 'AuthController@register');
 $router->get('/auth/logout', 'AuthController@logout');
+
+$router->get('/events', 'EventController@index');
+
+$router->get('/dashboard', 'DashboardController@index');

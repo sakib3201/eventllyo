@@ -3,10 +3,13 @@
 namespace App\Models;
 
 use Core\Database;
+use Core\Model;
 use PDO;
 
-class User {
-    private $db;
+class User extends Model{
+    protected $db;
+
+    protected $table = 'users';
 
     public function __construct() {
         $this->db = Database::connect();
@@ -26,6 +29,7 @@ class User {
         if ($user && password_verify($password, $user['password'])) {
             return $user;
         }
+
         return false;
     }
 }
